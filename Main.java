@@ -1,19 +1,22 @@
 package contacts;
 
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the nameof the person:");
-        String name = in.nextLine();
-        System.out.println("Enter the surname of the person:");
-        String surname = in.nextLine();
-        System.out.println("Enter the number");
-        String phone = in.nextLine();
+        Menu app = new Menu();
+        Controler contactsApp = new Controler(new PhoneBook());
 
-        Contact c  = new Contact(name,surname,phone);
-        PhoneBook.add(c);
+        while (app.isActive){
+
+            String  cmd = app.getCommand();
+            if (!cmd.equals("exit")) {
+                contactsApp.setCommand(cmd);
+                contactsApp.executeCommand();
+            }
+        }
+
 
 
     }
