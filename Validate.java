@@ -1,5 +1,7 @@
-package contacts;
+package contacts ;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,5 +25,23 @@ public class Validate {
         else
             return Optional.empty();
 
+    }
+
+    public static Optional<Gender> gender(String gender) {
+        try {
+            return Optional.of(Gender.valueOf(gender.toUpperCase()));
+        }
+        catch (IllegalArgumentException e){
+            return Optional.empty();
+        }
+    }
+
+    public static Optional<LocalDate> date(String date) {
+        try {
+            return Optional.of(LocalDate.parse(date));
+        }
+        catch (DateTimeParseException e){
+            return Optional.empty();
+        }
     }
 }

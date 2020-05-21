@@ -1,7 +1,6 @@
 package contacts;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PhoneBook {
@@ -50,5 +49,18 @@ public class PhoneBook {
             return false;
         }
 
+    }
+
+    public Contact getContact(int i) {
+        return contacts.get(i);
+    }
+
+    public Type getType(int i) {
+        if (contacts.get(i).getClass() == ContactPerson.class){
+            return Type.PERSON;
+        }
+        else {
+            return Type.ORGANIZATION;
+        }
     }
 }

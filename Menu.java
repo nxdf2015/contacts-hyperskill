@@ -12,7 +12,7 @@ public class Menu {
     }
 
     public String getCommand() {
-        System.out.println("Enter action (add, remove, edit, count, list, exit):");
+        System.out.println("\nEnter action (add, remove, edit, count, info, exit):");
 
         String cmd =  in.nextLine();
         if (cmd.equals("exit")){
@@ -20,5 +20,10 @@ public class Menu {
         }
 
         return cmd;
+    }
+
+    public String getType() {
+        System.out.println("Enter the type  (person, organization):");
+        return in.nextLine();
     }
 }

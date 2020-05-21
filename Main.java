@@ -1,8 +1,6 @@
 package contacts;
 
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Menu app = new Menu();
@@ -11,8 +9,17 @@ public class Main {
         while (app.isActive){
 
             String  cmd = app.getCommand();
-            if (!cmd.equals("exit")) {
-                contactsApp.setCommand(cmd);
+
+            if (cmd.equals("exit")){
+                break;}
+            else if (! cmd.equals("add")){
+
+                    contactsApp.setCommand(cmd);
+                    contactsApp.executeCommand();
+                }
+            else if ( cmd.equals("add")){
+                String type = app.getType();
+                contactsApp.setCommand(cmd,type);
                 contactsApp.executeCommand();
             }
         }
