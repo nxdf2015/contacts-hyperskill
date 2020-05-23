@@ -1,9 +1,12 @@
-package contacts;
+package contacts.phonebook;
+
+import contacts.Validate;
+import contacts.phonebook.Contact;
 
 import java.util.List;
 import java.util.Optional;
 
-public class ContactOrganisation extends Contact{
+public class ContactOrganisation extends Contact {
     private String adress;
 
     public ContactOrganisation(String name, String phone, String adress) {

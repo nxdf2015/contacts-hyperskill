@@ -1,4 +1,9 @@
-package contacts;
+package contacts.command;
+
+import contacts.*;
+import contacts.action.Action;
+import contacts.phonebook.Contact;
+import contacts.phonebook.PhoneBook;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +20,7 @@ public class ListCommand implements Command {
 
     @Override
     public void execute() {
-        Scanner scanner =IO.scanner();
+        Scanner scanner = IO.scanner();
         List<Contact> contacts = phoneBook.getContacts();
         if (contacts.isEmpty()){
             System.out.println("No records!");

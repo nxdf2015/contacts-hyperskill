@@ -1,11 +1,11 @@
-package contacts;
+package contacts.phonebook;
 
-import java.beans.Introspector;
+import contacts.Type;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -16,7 +16,7 @@ public class PhoneBook implements Serializable{
 
 
 
-    protected PhoneBook(){
+    public PhoneBook(){
 
         nameFile="default";
         contacts = new ArrayList<>();
@@ -28,7 +28,7 @@ public class PhoneBook implements Serializable{
     }
 
 
-    boolean remove(int id) {
+    public boolean remove(int id) {
         try {
             contacts.remove(id);
             return true;
@@ -40,7 +40,7 @@ public class PhoneBook implements Serializable{
 
 
 
-     boolean addContact(Contact c) {
+     public boolean addContact(Contact c) {
 
          boolean valid = contacts.add(c);
          save();
@@ -86,7 +86,7 @@ public class PhoneBook implements Serializable{
         return c -> {
 
             Pattern queryPattern = Pattern.compile(query, Pattern.CASE_INSENSITIVE);
-           // Pattern phonePattern = Validate.phonePattern;
+
 
             Predicate<String> p = v -> queryPattern.matcher(v).find() ;
             boolean match = false;
@@ -136,9 +136,7 @@ public class PhoneBook implements Serializable{
                 ObjectOutputStream os = new ObjectOutputStream(bufferedOutputStream);
                 )
         {
-//            for(Contact c : contacts){
-//               os.writeObject(c);
-//            }
+
             os.writeObject(contacts);
         }
         catch (IOException e){

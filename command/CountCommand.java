@@ -1,6 +1,9 @@
-package contacts;
+package contacts.command;
 
-public class CountCommand implements Command{
+import contacts.Menu;
+import contacts.phonebook.PhoneBook;
+
+public class CountCommand implements Command {
 
     private PhoneBook phoneBook;
 

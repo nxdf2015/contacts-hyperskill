@@ -1,8 +1,13 @@
 package contacts;
 
+import contacts.command.Command;
+import contacts.phonebook.Contact;
+import contacts.phonebook.ContactPerson;
+import contacts.phonebook.PhoneBook;
+
 import java.util.Scanner;
 
-public class AddPersonCmd implements Command{
+public class AddPersonCmd implements Command {
     private PhoneBook phoneBook;
 
     public AddPersonCmd(PhoneBook phoneBook) {

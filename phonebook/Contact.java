@@ -1,4 +1,6 @@
-package contacts;
+package contacts.phonebook;
+
+import contacts.Validate;
 
 import java.io.Serializable;
 import java.time.LocalDate;

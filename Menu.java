@@ -1,8 +1,11 @@
 package contacts;
 
+import contacts.command.Command;
+import contacts.phonebook.PhoneBook;
+
 import java.util.Scanner;
 
-public class Menu implements  Command{
+public class Menu implements Command {
     private PhoneBook phoneBook;
 
 

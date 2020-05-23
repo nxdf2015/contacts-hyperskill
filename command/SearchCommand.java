@@ -1,7 +1,11 @@
-package contacts;
+package contacts.command;
+
+import contacts.*;
+import contacts.action.Action;
+import contacts.phonebook.Contact;
+import contacts.phonebook.PhoneBook;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class SearchCommand implements Command {
 

@@ -1,4 +1,8 @@
-package contacts;
+package contacts.action;
+
+import contacts.IO;
+import contacts.phonebook.PhoneBook;
+import contacts.Type;
 
 import java.util.Scanner;
 
@@ -11,7 +15,6 @@ public class ActionEdit implements Action {
 
     @Override
     public void execute(int id) {
-       // System.out.println("4----------------------------");
         Type type = phoneBook.getType(id);
 
         if (type == Type.ORGANIZATION){
@@ -20,10 +23,10 @@ public class ActionEdit implements Action {
         else {
             editPerson();
         }
-       // System.out.println("2----------------------------");
+
         Scanner scanner = IO.scanner();
         String field = scanner.nextLine();
-       // System.out.println("3----------------------------");
+
         System.out.println("Enter "+field+" :");
         String value = scanner.nextLine();
         if (phoneBook.update(id,field,value)){

@@ -1,5 +1,10 @@
 package contacts;
 
+import contacts.command.Command;
+import contacts.phonebook.Contact;
+import contacts.phonebook.ContactOrganisation;
+import contacts.phonebook.PhoneBook;
+
 import java.util.Scanner;
 
 public class AddOrganizationCmd implements Command {

@@ -1,4 +1,6 @@
-package contacts;
+package contacts.action;
+
+import contacts.phonebook.PhoneBook;
 
 public class ActionDelete implements Action {
     private final PhoneBook phoneBook;

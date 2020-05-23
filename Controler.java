@@ -1,6 +1,10 @@
 package contacts;
 
-import javax.swing.*;
+import contacts.command.Command;
+import contacts.command.CountCommand;
+import contacts.command.ListCommand;
+import contacts.command.SearchCommand;
+import contacts.phonebook.PhoneBook;
 
 public class Controler {
     private Command cmd;

@@ -1,5 +1,10 @@
 package contacts;
 
+import contacts.action.Action;
+import contacts.action.ActionDelete;
+import contacts.action.ActionEdit;
+import contacts.phonebook.PhoneBook;
+
 import java.util.Scanner;
 
 public class ActionRecord implements Action {

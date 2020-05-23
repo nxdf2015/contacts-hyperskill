@@ -1,4 +1,8 @@
-package contacts;
+package contacts.phonebook;
+
+import contacts.Gender;
+import contacts.Validate;
+import contacts.phonebook.Contact;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -15,7 +19,7 @@ public class ContactPerson extends Contact implements Serializable {
         super(name,phone);
 
         this.surname = surname;
-        this.gender=Validate.gender(gender).orElse(null);
+        this.gender= Validate.gender(gender).orElse(null);
         this.birth=Validate.date(birth).orElse(null);
         this.phone = Validate.phone(phone).orElse("");
     }
