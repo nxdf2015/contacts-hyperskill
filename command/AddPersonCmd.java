@@ -1,5 +1,8 @@
-package contacts;
+package contacts.command;
 
+import contacts.IO;
+import contacts.Menu;
+import contacts.Validate;
 import contacts.command.Command;
 import contacts.phonebook.Contact;
 import contacts.phonebook.ContactPerson;

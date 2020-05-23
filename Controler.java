@@ -1,9 +1,6 @@
 package contacts;
 
-import contacts.command.Command;
-import contacts.command.CountCommand;
-import contacts.command.ListCommand;
-import contacts.command.SearchCommand;
+import contacts.command.*;
 import contacts.phonebook.PhoneBook;
 
 public class Controler {

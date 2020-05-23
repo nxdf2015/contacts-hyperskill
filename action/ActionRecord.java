@@ -1,5 +1,7 @@
-package contacts;
+package contacts.action;
 
+import contacts.IO;
+import contacts.Menu;
 import contacts.action.Action;
 import contacts.action.ActionDelete;
 import contacts.action.ActionEdit;
