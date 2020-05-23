@@ -11,7 +11,7 @@ public class AddPersonCmd implements Command{
 
     @Override
     public void execute() {
-        Scanner in = new Scanner(System.in);
+        Scanner in = IO.scanner();
         System.out.println("Enter the name:");
         String name = in.nextLine();
 
@@ -40,5 +40,7 @@ public class AddPersonCmd implements Command{
         if (phoneBook.addContact(c)){
             System.out.println("The record added.");
         }
+        System.out.println();
+        new Menu(phoneBook).execute();
     }
 }

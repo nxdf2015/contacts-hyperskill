@@ -12,5 +12,7 @@ public class CountCommand implements Command{
     public void execute() {
         int count = phoneBook.count();
         System.out.println("The Phone Book has "+ count+" records.");
+        System.out.println();
+        new Menu(phoneBook).execute();
     }
 }

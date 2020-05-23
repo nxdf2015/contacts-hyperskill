@@ -1,5 +1,8 @@
 package contacts;
 
+import java.util.List;
+import java.util.Optional;
+
 public class ContactOrganisation extends Contact{
     private String adress;
 
@@ -18,8 +21,37 @@ public class ContactOrganisation extends Contact{
                 adress=value;
                 break;
             case "number":
-                phone = Validate.phone(value);
+                Optional<String> phoneOption = Validate.phone(value);
+                if (phoneOption.isEmpty()){
+                    System.out.println("Wrong number!");
+                }
+                phone=phoneOption.orElse("");
         }
+
+    }
+
+    @Override
+    public List<String> values() {
+        return List.of(name,adress);
+    }
+
+    @Override
+    public String getValue(String field) {
+        switch (field){
+            case "name":
+                return name;
+            case "adress":
+                return adress;
+            case "number":
+                return phone;
+            default:
+                return "";
+        }
+    }
+
+    @Override
+    public List<String> fields() {
+        return List.of("name","adress","number");
 
     }
 
@@ -33,7 +65,7 @@ public class ContactOrganisation extends Contact{
                 .append(adress)
                 .append(System.lineSeparator())
                 .append("Number: ")
-                .append(Render.ifPresent(phone))
+                .append(phone.isEmpty() ? "[no data]" : phone)
                 .append(System.lineSeparator())
                 .append(super.toString());
 

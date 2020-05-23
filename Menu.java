@@ -2,28 +2,43 @@ package contacts;
 
 import java.util.Scanner;
 
-public class Menu {
+public class Menu implements  Command{
+    private PhoneBook phoneBook;
 
-    private static Scanner in = new Scanner(System.in);
-    public boolean isActive;
 
-    public Menu() {
-        this.isActive = true;
+
+    public Menu(PhoneBook phoneBook) {
+        this.phoneBook = phoneBook;
     }
 
-    public String getCommand() {
-        System.out.println("\nEnter action (add, remove, edit, count, info, exit):");
+    public void  execute() {
+        Scanner in = IO.scanner();
+        String text = "[menu] Enter action (add, list, search, count, exit):";
 
-        String cmd =  in.nextLine();
+        String cmd =  IO.nextLine(text);
+
+
+        Controler contactsApp = new Controler(phoneBook);
         if (cmd.equals("exit")){
-            isActive=false;
+               return ;}
+            else if (! cmd.equals("add")){
+
+                    contactsApp.setCommand(cmd);
+                    contactsApp.executeCommand();
+                }
+            else if ( cmd.equals("add")){
+                String type = getType();
+                contactsApp.setCommand(cmd,type);
+                contactsApp.executeCommand();
+            }
         }
 
-        return cmd;
-    }
+
+
 
     public String getType() {
-        System.out.println("Enter the type  (person, organization):");
-        return in.nextLine();
+
+        String text = "Enter the type  (person, organization):";
+        return IO.nextLine(text);
     }
 }

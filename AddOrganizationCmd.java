@@ -12,7 +12,7 @@ public class AddOrganizationCmd implements Command {
 
     @Override
     public void execute() {
-        Scanner   scanner = new Scanner(System.in);
+        Scanner   scanner = IO.scanner();
 
         System.out.println("Enter the organization name: ");
         String name = scanner.nextLine();
@@ -28,5 +28,7 @@ public class AddOrganizationCmd implements Command {
         if (phoneBook.addContact(c)){
             System.out.println("The record added.");
         }
+        System.out.println();
+        new Menu(phoneBook).execute();
     }
 }

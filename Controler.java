@@ -1,5 +1,7 @@
 package contacts;
 
+import javax.swing.*;
+
 public class Controler {
     private Command cmd;
     private PhoneBook phoneBook;
@@ -13,14 +15,12 @@ public class Controler {
             case "count":
                 cmd = new CountCommand(phoneBook);
                 break;
-            case "remove":
-                cmd = new RemoveCommand(phoneBook);
+            case "search":
+                cmd = new SearchCommand(phoneBook);
                 break;
-            case "info":
-                cmd = new InfoCommand(phoneBook);
-                break;
-            case "edit":
-                cmd = new EditCommand(phoneBook);
+            case "list":
+                cmd = new ListCommand(phoneBook);
+
 
         }
     }

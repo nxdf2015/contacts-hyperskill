@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validate {
-    private static Pattern phonePattern = Pattern.compile("^\\+?[\\s-]?" +
+    public static Pattern phonePattern = Pattern.compile("^\\+?[\\s-]?" +
             "(" +
             "\\([a-z0-9]+\\)?|" +
             "\\([a-z0-9]+\\)[\\s-][a-z0-9]{2,}|" +
